@@ -1,0 +1,551 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --bg: #080a14;
+  --panel: rgba(17, 23, 43, 0.92);
+  --cyan: #00eaff;
+  --purple: #b34cff;
+  --muted: #919bb8;
+  --border: rgba(132, 157, 206, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 28px 15px;
+  display: grid;
+  place-items: center;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: #f7f8ff;
+  font-family: 'Vazirmatn', Tahoma, sans-serif;
+}
+
+button, input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.background-glow {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: .18;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.glow-one {
+  background: var(--cyan);
+  top: -130px;
+  right: -90px;
+}
+
+.glow-two {
+  background: var(--purple);
+  bottom: -150px;
+  left: -100px;
+}
+
+.screen {
+  display: none;
+  width: 100%;
+  max-width: 560px;
+  animation: appear .45s ease both;
+}
+
+.screen.active {
+  display: block;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* صفحه ورود */
+
+.login-card,
+.creator-card {
+  width: 100%;
+  padding: 34px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--panel);
+  box-shadow: 0 25px 90px #0005, 0 0 40px #00eaff08;
+  backdrop-filter: blur(16px);
+}
+
+.login-card {
+  text-align: center;
+}
+
+.brand-symbol {
+  width: 74px;
+  height: 74px;
+  margin: 0 auto 20px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #00eaff80;
+  border-radius: 22px;
+  background: #00eaff0c;
+  color: var(--cyan);
+  font-size: 42px;
+  font-weight: 900;
+  transform: rotate(-5deg);
+  box-shadow: 0 0 35px #00eaff16;
+}
+
+.brand-symbol span {
+  color: #fff;
+  font-size: 18px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--cyan);
+  font-size: 10px;
+  letter-spacing: 3px;
+  direction: ltr;
+}
+
+.brand-title {
+  margin: 0;
+  font-size: clamp(32px, 8vw, 47px);
+  line-height: 1.3;
+  letter-spacing: 2px;
+  direction: ltr;
+}
+
+.brand-title span,
+.mini-logo span {
+  color: var(--cyan);
+  text-shadow: 0 0 20px #00eaff45;
+}
+
+.subtitle {
+  margin: 10px 0 24px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.divider,
+.creator-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #00eaff66, transparent);
+  margin: 25px 0;
+}
+
+.login-card label {
+  display: block;
+  margin-bottom: 9px;
+  text-align: right;
+  color: #dce4ff;
+  font-size: 13px;
+}
+
+.login-card input {
+  width: 100%;
+  height: 51px;
+  padding: 0 15px;
+  outline: none;
+  color: white;
+  border: 1px solid #34405b;
+  border-radius: 12px;
+  background: #090e1c;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.login-card input:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 18px #00eaff12;
+}
+
+.login-card input::placeholder {
+  color: #69738e;
+}
+
+.main-button {
+  width: 100%;
+  min-height: 49px;
+  margin-top: 18px;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 12px;
+  background: linear-gradient(100deg, #00eaff, #7af7ff);
+  color: #06101c;
+  font-weight: 800;
+  box-shadow: 0 7px 25px #00eaff19;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.main-button span {
+  margin-right: 8px;
+}
+
+.main-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px #00eaff32;
+}
+
+.login-features {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+  color: #aab6d2;
+  font-size: 10px;
+}
+
+.small-note {
+  margin: 23px 0 0;
+  color: #66718e;
+  font-size: 10px;
+}
+
+/* صفحه معرفی سازنده */
+
+.creator-card {
+  padding: 28px;
+}
+
+.creator-top {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.creator-top h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.creator-tag {
+  margin: 7px 0 0;
+  color: #8c9ab9;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  direction: ltr;
+  text-align: right;
+}
+
+.avatar {
+  position: relative;
+  flex-shrink: 0;
+  width: 78px;
+  height: 78px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #b34cff99;
+  border-radius: 23px;
+  background: linear-gradient(140deg, #b34cff24, #00eaff12);
+  color: white;
+  font-size: 40px;
+  font-weight: 900;
+  box-shadow: 0 0 25px #b34cff14;
+}
+
+.avatar span {
+  position: absolute;
+  top: 5px;
+  right: 9px;
+  color: var(--cyan);
+  font-size: 13px;
+}
+
+.creator-divider {
+  margin: 25px 0 20px;
+}
+
+.intro {
+  font-size: 17px;
+  margin: 0 0 10px;
+}
+
+.intro strong {
+  color: var(--cyan);
+}
+
+.bio {
+  margin: 0 0 20px;
+  color: #aab5cf;
+  font-size: 12px;
+  line-height: 2.2;
+}
+
+.info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 14px;
+  margin-top: 10px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #0c1120a8;
+}
+
+.info-icon {
+  flex-shrink: 0;
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: #00eaff0c;
+  font-size: 19px;
+}
+
+.info-card h3 {
+  margin: 0 0 5px;
+  font-size: 12px;
+}
+
+.info-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.9;
+}
+
+.creator-quote {
+  margin-top: 20px;
+  padding: 13px;
+  border-right: 2px solid var(--purple);
+  border-radius: 4px;
+  background: #b34cff0a;
+  color: #d9c3ff;
+  font-size: 11px;
+  line-height: 2;
+}
+
+.text-button {
+  display: block;
+  margin: 17px auto 0;
+  padding: 8px;
+  border: 0;
+  background: transparent;
+  color: #929db9;
+  font-size: 11px;
+}
+
+.text-button:hover,
+.about-link:hover {
+  color: var(--cyan);
+}
+
+/* محیط بازی */
+
+.game-container {
+  width: 100%;
+}
+
+.game-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.mini-logo {
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  direction: ltr;
+}
+
+.player-greeting {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.player-greeting strong {
+  color: var(--cyan);
+}
+
+.exit-button {
+  padding: 9px 13px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #101628;
+  color: #c3cce3;
+  font-size: 11px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.stat {
+  padding: 13px 8px;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: #111729e8;
+}
+
+.stat small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.stat strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--cyan);
+  font-size: 25px;
+}
+
+.arena {
+  position: relative;
+  height: 370px;
+  overflow: hidden;
+  border: 1px solid #34415d;
+  border-radius: 19px;
+  background-color: #0b1020;
+  background-image:
+    linear-gradient(#1b294044 1px, transparent 1px),
+    linear-gradient(90deg, #1b294044 1px, transparent 1px);
+  background-size: 25px 25px;
+}
+
+.game-welcome,
+.game-message {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+  text-align: center;
+}
+
+.target-icon {
+  color: var(--cyan);
+  font-size: 66px;
+  text-shadow: 0 0 25px var(--cyan);
+}
+
+.game-welcome h2 {
+  margin: 5px 0;
+}
+
+.game-welcome p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.start-button {
+  width: auto;
+  min-width: 160px;
+}
+
+.target {
+  position: absolute;
+  z-index: 2;
+  padding: 0;
+  border: 3px solid white;
+  outline: 2px solid var(--cyan);
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 0 12%, #00eaff 16% 35%, #124d88 72%);
+  box-shadow: 0 0 12px var(--cyan), 0 0 30px #00eaff99;
+  transform: translate(-50%, -50%);
+  animation: pulse .65s infinite alternate;
+  touch-action: manipulation;
+}
+
+@keyframes pulse {
+  from { filter: brightness(.8); }
+  to { filter: brightness(1.5); }
+}
+
+.game-message {
+  z-index: 3;
+  gap: 12px;
+  background: #080a12ee;
+  font-weight: 800;
+}
+
+.game-message button {
+  margin-top: 5px;
+  padding: 11px 24px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--cyan);
+  color: #06101c;
+  font-weight: 800;
+}
+
+.game-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.about-link {
+  display: block;
+  margin: 20px auto 0;
+  border: 0;
+  background: transparent;
+  color: #8d9ab7;
+  font-size: 11px;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 18px 12px;
+  }
+
+  .login-card,
+  .creator-card {
+    padding: 23px 19px;
+  }
+
+  .arena {
+    height: 340px;
+  }
+
+  .creator-top h2 {
+    font-size: 21px;
+  }
+
+  .avatar {
+    width: 67px;
+    height: 67px;
+  }
+
+  .game-footer {
+    justify-content: center;
+  }
+}

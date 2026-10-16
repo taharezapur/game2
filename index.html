@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080a14">
+  <title>NEON HUNT | بازی شکار نئون</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+
+  <!-- صفحه ورود -->
+  <section class="screen active" id="loginScreen">
+    <div class="login-card">
+      <div class="brand-symbol">N<span>✦</span></div>
+
+      <p class="eyebrow">WELCOME TO THE FUTURE</p>
+      <h1 class="brand-title">NEON<span>HUNT</span></h1>
+      <p class="subtitle">دنیای سرعت، دقت و هیجان</p>
+
+      <div class="divider"></div>
+
+      <label for="playerName">نام بازیکن</label>
+      <input
+        id="playerName"
+        type="text"
+        maxlength="18"
+        placeholder="اسمت رو وارد کن..."
+        autocomplete="nickname"
+      >
+
+      <button class="main-button" id="loginBtn">
+        ورود به بازی <span>←</span>
+      </button>
+
+      <div class="login-features">
+        <span>✦ رایگان</span>
+        <span>⚡ هیجان‌انگیز</span>
+        <span>🎯 مهارت‌محور</span>
+      </div>
+
+      <p class="small-note">یک بازی مستقل ساخته‌شده با عشق به برنامه‌نویسی</p>
+    </div>
+  </section>
+
+  <!-- صفحه معرفی سازنده -->
+  <section class="screen" id="creatorScreen">
+    <div class="creator-card">
+      <div class="creator-top">
+        <div class="avatar">T<span>✦</span></div>
+        <div>
+          <p class="eyebrow">BEHIND THE GAME</p>
+          <h2>درباره سازنده</h2>
+          <p class="creator-tag">CREATIVE MIND · DEVELOPER</p>
+        </div>
+      </div>
+
+      <div class="creator-divider"></div>
+
+      <p class="intro">سلام <strong id="welcomeName">بازیکن</strong>! 👋</p>
+
+      <p class="bio">
+        من طاها هستم؛ علاقه‌مند به دنیای کامپیوتر،
+        برنامه‌نویسی و طراحی وب. دوست دارم ایده‌های
+        خلاقانه‌ام رو به پروژه‌های واقعی تبدیل کنم.
+      </p>
+
+      <div class="info-card">
+        <span class="info-icon">💻</span>
+        <div>
+          <h3>علاقه‌مند به برنامه‌نویسی</h3>
+          <p>یادگیری، آزمایش ایده‌ها و ساخت پروژه‌های جدید.</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <span class="info-icon">🎮</span>
+        <div>
+          <h3>علاقه‌مند به طراحی بازی</h3>
+          <p>ترکیب کدنویسی، خلاقیت و تجربه‌های سرگرم‌کننده.</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <span class="info-icon">🚀</span>
+        <div>
+          <h3>هدف من</h3>
+          <p>هر روز یاد بگیرم، بهتر بسازم و ایده‌های بزرگ‌تری رو اجرا کنم.</p>
+        </div>
+      </div>
+
+      <div class="creator-quote">
+        «هر پروژه، یک قدم به سمت حرفه‌ای‌تر شدن است.»
+      </div>
+
+      <button class="main-button" id="enterGameBtn">
+        بریم سراغ بازی! <span>←</span>
+      </button>
+
+      <button class="text-button" id="backBtn">بازگشت به صفحه ورود</button>
+    </div>
+  </section>
+
+  <!-- محیط اصلی بازی -->
+  <section class="screen" id="gameScreen">
+    <div class="game-container">
+      <header class="game-header">
+        <div>
+          <div class="mini-logo">NEON<span>HUNT</span></div>
+          <p class="player-greeting">خوش اومدی، <strong id="gamePlayerName">بازیکن</strong></p>
+        </div>
+        <button class="exit-button" id="exitBtn">خروج ↗</button>
+      </header>
+
+      <div class="stats">
+        <div class="stat">
+          <small>امتیاز</small>
+          <strong id="score">0</strong>
+        </div>
+        <div class="stat">
+          <small>زمان باقی‌مانده</small>
+          <strong id="time">30</strong>
+        </div>
+        <div class="stat">
+          <small>رکورد</small>
+          <strong id="best">0</strong>
+        </div>
+      </div>
+
+      <div class="arena" id="arena">
+        <div class="game-welcome" id="gameWelcome">
+          <div class="target-icon">◎</div>
+          <h2>آماده‌ای؟</h2>
+          <p>در ۳۰ ثانیه، هدف‌های نئونی رو بزن!</p>
+          <button class="main-button start-button" id="startBtn">شروع بازی</button>
+        </div>
+
+        <button class="target" id="target" aria-label="زدن هدف" hidden></button>
+
+        <div class="game-message" id="message" hidden></div>
+      </div>
+
+      <div class="game-footer">
+        <span>🎯 هر هدف = یک امتیاز</span>
+        <span>⚡ هر ۵ امتیاز، هدف کوچک‌تر می‌شه</span>
+      </div>
+
+      <button class="about-link" id="aboutAgainBtn">✦ درباره سازنده</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
